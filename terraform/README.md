@@ -1,0 +1,1 @@
+# Contains Terraform Configuration For EC2 Instances(Servers)
