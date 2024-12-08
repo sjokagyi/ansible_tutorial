@@ -162,13 +162,13 @@ resource "aws_instance" "ansible-tutorial-web-server-instance"{
         Name = "ansible-tutorial-web-server-instance"
     }
 
-    provisioner "local-exec" {
-      command = templatefile("windows-ssh-config.tpl", {
+    provisioner "local-exec" {  
+      command = templatefile("linux-ssh-config.tpl", { # Ansible works on a Linux Distro so the linux ssh config would be utilized.
         hostname = self.public_ip,
         user = "ubuntu",
         identityfile = "~/.ssh/ansible-tutorial"
       })
-      interpreter = ["Powershell", "-Command"]
+      interpreter = ["bash", "-c"]  # For Linux 
     }
 }
 
