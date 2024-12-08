@@ -1,1 +1,1 @@
-# Terraform Cofiguration For Target Server 1
+# Terraform Configuration For Target Server 1
