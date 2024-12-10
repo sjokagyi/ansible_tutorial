@@ -1,0 +1,47 @@
+# Ansible-specific
+*.retry
+vault_pass.txt
+*.vault
+*.log
+*.bak
+*.orig
+
+# Sensitive files
+secrets.yml
+group_vars/*vault*
+host_vars/*vault*
+inventory/*
+!inventory/example_inventory
+
+# SSH keys
+*.pem
+*.key
+*.priv
+
+# Python virtual environments
+venv/
+env/
+*.pyc
+__pycache__/
+
+# Ansible roles
+roles/*/.retry
+roles/*/vars/*.vault
+roles/*/group_vars/*.vault
+roles/*/host_vars/*.vault
+
+# Ansible-generated
+*.facts
+*.cfg
+
+# General files and directories
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.backup
+*.tar.gz
+*.zip
+*.tmp

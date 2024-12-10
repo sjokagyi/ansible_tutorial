@@ -1,0 +1,20 @@
+---
+
+- hosts: all                           # For applying the commands to all connected target servers
+  become: true                         # For giving sudo privileges to the user
+  tasks:                               # For describing plays
+
+  - name: update repository index
+    apt:
+      update_cache: yes
+
+
+  - name: install the apache2 package  # For description of task
+    apt:                               # For indicating the module "apt"
+      name: apache2                    # For utilizing the argument "name" of the apt module to input the package "apache2" for installation
+      state: absent                    # For choosing the state of the package. absent removes the selected package.
+
+  - name: add php support for apache
+    apt:
+      name: libapache2-mod-php
+      state: absent
